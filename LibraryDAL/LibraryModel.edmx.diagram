@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cabf5c963702464cbbcdee56f5ae4ee5" Name="Diagram1">
+        <EntityTypeShape EntityType="LibraryRusTelekonModel.Abonent" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryRusTelekonModel.Author" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryRusTelekonModel.Book" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryRusTelekonModel.BookAbonent" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryRusTelekonModel.BookAuthor" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryRusTelekonModel.BookDomain" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryRusTelekonModel.Domain" Width="1.5" PointX="3" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryRusTelekonModel.Publisher" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <AssociationConnector Association="LibraryRusTelekonModel.FK__BookAbone__Abone__239E4DCF" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryRusTelekonModel.FK__BookAutho__Autho__1BFD2C07" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryRusTelekonModel.FK__Book__PublisherI__182C9B23" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryRusTelekonModel.FK__BookAbone__BookI__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryRusTelekonModel.FK__BookAutho__BookI__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryRusTelekonModel.FK__BookDomai__BookI__1ED998B2" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryRusTelekonModel.FK__BookDomai__Domai__1FCDBCEB" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

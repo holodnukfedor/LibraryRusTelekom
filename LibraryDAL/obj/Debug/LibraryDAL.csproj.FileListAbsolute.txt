@@ -1,0 +1,10 @@
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryDAL\bin\Debug\LibraryDAL.dll.config
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryDAL\bin\Debug\LibraryDAL.dll
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryDAL\bin\Debug\LibraryDAL.pdb
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryDAL\bin\Debug\EntityFramework.dll
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryDAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryDAL\bin\Debug\EntityFramework.xml
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryDAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryDAL\obj\Debug\LibraryDAL.csprojResolveAssemblyReference.cache
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryDAL\obj\Debug\LibraryDAL.dll
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryDAL\obj\Debug\LibraryDAL.pdb

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReportBookPopularity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ExtensionData />
+  <BookInfos>
+    <BookInfoForReport>
+      <ExtensionData />
+      <Annotation>Это вторая книга о приключениях Гарри Поттера. Он снова вступает в отчаянную схватку со злом. На этот раз враг его так силен, что надежды на победу почти нет.В Школе чародейства и волшебства «Хогвартс» происходят тревожные события. Кто-то нападает на учеников школы, и преподаватели подозревают, что это таинственное чудовище, которое скрывается в легендарной Тайной комнате. Гарри Поттер и его друзья разгадывают загадку Тайной комнаты, и теперь Гарри снова предстоит сразиться с лордом Волан-де-Мортом. Сумеет ли он победить на этот раз?</Annotation>
+      <Authors>Роулинг Д. К. </Authors>
+      <CountOfTaking>3</CountOfTaking>
+      <Domain>Детская литература Приключения Фантастика </Domain>
+      <Id>2</Id>
+      <Name>Гарри Поттер и тайная комната</Name>
+      <Publisher>Росмен</Publisher>
+      <YearOfPublication>2000-01-01T00:00:00</YearOfPublication>
+    </BookInfoForReport>
+    <BookInfoForReport>
+      <ExtensionData />
+      <Annotation>Одиннадцатилетний мальчик-сирота Гарри Поттер живет в семье своей тетки и даже не подозревает, что он - настоящий волшебник. Но однажды прилетает сова с письмом для него, и жизнь Гарри Поттера изменяется навсегда. Он узнает, что зачислен в Школу Чародейства и Волшебства, выясняет правду о загадочной смерти своих родителей, а в результате ему удается раскрыть секрет философского камня</Annotation>
+      <Authors>Роулинг Д. К. </Authors>
+      <CountOfTaking>2</CountOfTaking>
+      <Domain>Детская литература Приключения Фантастика </Domain>
+      <Id>1</Id>
+      <Name>Гарри Поттер и философский камень</Name>
+      <Publisher>Росмен</Publisher>
+      <YearOfPublication>2000-01-01T00:00:00</YearOfPublication>
+    </BookInfoForReport>
+  </BookInfos>
+  <FirstDate>2016-08-28T22:57:42.3008665+03:00</FirstDate>
+  <LastDate>2016-08-28T22:57:42.3048667+03:00</LastDate>
+</ReportBookPopularity>

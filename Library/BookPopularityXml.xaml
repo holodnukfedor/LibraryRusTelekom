@@ -1,0 +1,17 @@
+﻿<Window x:Class="Library.BookPopularityXml"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" ResizeMode="NoResize"
+        Title="Создать отчет xml о популярности книг" Height="316.636" Width="488.182">
+    <Grid>
+        <Calendar x:Name="LastDate" HorizontalAlignment="Left" Margin="271,62,0,0" VerticalAlignment="Top"/>
+        <Calendar x:Name="FirstDate" HorizontalAlignment="Left" Margin="39,62,0,0" VerticalAlignment="Top"/>
+        <Label Content="Начальная дата" HorizontalAlignment="Left" Margin="39,37,0,0" VerticalAlignment="Top" Background="#FF71EC81"/>
+        <Label Content="Конечная дата" HorizontalAlignment="Left" Margin="271,36,0,0" VerticalAlignment="Top" Background="#FF71EC81"/>
+        <Label Content="Создать отчет" FontSize="14"
+                           FontWeight="Bold" FontFamily="Bookman Old Style"
+               VerticalAlignment="Top" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Width="480" Background="#FF4F8015" Foreground="White"/>
+        <Button x:Name="OpenFileDialog" Content="Задать имя файл" Click="OpenFileDialog_Click"
+                HorizontalAlignment="Left" Margin="175,246,0,0" VerticalAlignment="Top" Width="136"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,14 @@
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryWCF\bin\Debug\LibraryWCF.dll.config
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryWCF\bin\Debug\LibraryWCF.dll
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryWCF\bin\Debug\LibraryWCF.pdb
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryWCF\bin\Debug\EntityFramework.dll
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryWCF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryWCF\bin\Debug\LibraryBLL.dll
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryWCF\bin\Debug\LibraryDAL.dll
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryWCF\bin\Debug\LibraryBLL.pdb
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryWCF\bin\Debug\LibraryDAL.pdb
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryWCF\bin\Debug\EntityFramework.xml
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryWCF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryWCF\obj\Debug\LibraryWCF.csprojResolveAssemblyReference.cache
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryWCF\obj\Debug\LibraryWCF.dll
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryWCF\obj\Debug\LibraryWCF.pdb

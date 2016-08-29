@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/LibraryBLL.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LibraryBLL.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/LibraryDAL.Model" />
+  <xs:complexType name="ReportBookPopularity">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/LibraryDAL.Model" minOccurs="0" name="BookInfos" nillable="true" type="q1:ArrayOfBookInfoForReport" />
+      <xs:element minOccurs="0" name="FirstDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReportBookPopularity" nillable="true" type="tns:ReportBookPopularity" />
+  <xs:complexType name="ArrayOfBookDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BookDTO" nillable="true" type="tns:BookDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBookDTO" nillable="true" type="tns:ArrayOfBookDTO" />
+  <xs:complexType name="BookDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AmountOfFree" type="xs:int" />
+      <xs:element minOccurs="0" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Authors" nillable="true" type="tns:ArrayOfAuthorDTO" />
+      <xs:element minOccurs="0" name="Count" type="xs:int" />
+      <xs:element minOccurs="0" name="Domain" nillable="true" type="tns:ArrayOfDomainDTO" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Publisher" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="YearOfPublication" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BookDTO" nillable="true" type="tns:BookDTO" />
+  <xs:complexType name="ArrayOfAuthorDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AuthorDTO" nillable="true" type="tns:AuthorDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAuthorDTO" nillable="true" type="tns:ArrayOfAuthorDTO" />
+  <xs:complexType name="AuthorDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Patronymic" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuthorDTO" nillable="true" type="tns:AuthorDTO" />
+  <xs:complexType name="ArrayOfDomainDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DomainDTO" nillable="true" type="tns:DomainDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDomainDTO" nillable="true" type="tns:ArrayOfDomainDTO" />
+  <xs:complexType name="DomainDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DomainDTO" nillable="true" type="tns:DomainDTO" />
+  <xs:complexType name="ArrayOfUserBookDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserBookDTO" nillable="true" type="tns:UserBookDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserBookDTO" nillable="true" type="tns:ArrayOfUserBookDTO" />
+  <xs:complexType name="UserBookDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Authors" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BookAbonentId" type="xs:int" />
+      <xs:element minOccurs="0" name="BookId" type="xs:int" />
+      <xs:element minOccurs="0" name="DateOfReceiving" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Domain" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Publisher" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="YearOfPublication" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserBookDTO" nillable="true" type="tns:UserBookDTO" />
+  <xs:complexType name="BookEditingInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Count" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="YearOfPublication" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BookEditingInfo" nillable="true" type="tns:BookEditingInfo" />
+  <xs:complexType name="ArrayOfAbonentDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AbonentDTO" nillable="true" type="tns:AbonentDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAbonentDTO" nillable="true" type="tns:ArrayOfAbonentDTO" />
+  <xs:complexType name="AbonentDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Patronymic" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AbonentDTO" nillable="true" type="tns:AbonentDTO" />
+  <xs:complexType name="ArrayOfPublisherDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PublisherDTO" nillable="true" type="tns:PublisherDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPublisherDTO" nillable="true" type="tns:ArrayOfPublisherDTO" />
+  <xs:complexType name="PublisherDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Info" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PublisherDTO" nillable="true" type="tns:PublisherDTO" />
+</xs:schema>

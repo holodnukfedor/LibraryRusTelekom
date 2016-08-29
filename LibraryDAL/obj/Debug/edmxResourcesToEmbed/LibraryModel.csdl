@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LibraryRusTelekonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Abonent">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Patronymic" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="BookAbonent" Relationship="Self.FK__BookAbone__Abone__239E4DCF" FromRole="Abonent" ToRole="BookAbonent" />
+  </EntityType>
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Patronymic" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="BookAuthor" Relationship="Self.FK__BookAutho__Autho__1BFD2C07" FromRole="Author" ToRole="BookAuthor" />
+  </EntityType>
+  <EntityType Name="Book">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Annotation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PublisherId" Type="Int32" Nullable="false" />
+    <Property Name="YearOfPublication" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Count" Type="Int32" Nullable="false" />
+    <Property Name="AmountOfFree" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Publisher" Relationship="Self.FK__Book__PublisherI__182C9B23" FromRole="Book" ToRole="Publisher" />
+    <NavigationProperty Name="BookAbonent" Relationship="Self.FK__BookAbone__BookI__22AA2996" FromRole="Book" ToRole="BookAbonent" />
+    <NavigationProperty Name="BookAuthor" Relationship="Self.FK__BookAutho__BookI__1B0907CE" FromRole="Book" ToRole="BookAuthor" />
+    <NavigationProperty Name="BookDomain" Relationship="Self.FK__BookDomai__BookI__1ED998B2" FromRole="Book" ToRole="BookDomain" />
+  </EntityType>
+  <EntityType Name="BookAbonent">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookId" Type="Int32" Nullable="false" />
+    <Property Name="AbonentId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Abonent" Relationship="Self.FK__BookAbone__Abone__239E4DCF" FromRole="BookAbonent" ToRole="Abonent" />
+    <NavigationProperty Name="Book" Relationship="Self.FK__BookAbone__BookI__22AA2996" FromRole="BookAbonent" ToRole="Book" />
+    <Property Name="DateOfReceiving" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ReturnDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="BookAuthor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookId" Type="Int32" Nullable="false" />
+    <Property Name="AuthorId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Author" Relationship="Self.FK__BookAutho__Autho__1BFD2C07" FromRole="BookAuthor" ToRole="Author" />
+    <NavigationProperty Name="Book" Relationship="Self.FK__BookAutho__BookI__1B0907CE" FromRole="BookAuthor" ToRole="Book" />
+  </EntityType>
+  <EntityType Name="BookDomain">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookId" Type="Int32" Nullable="false" />
+    <Property Name="DomainId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Book" Relationship="Self.FK__BookDomai__BookI__1ED998B2" FromRole="BookDomain" ToRole="Book" />
+    <NavigationProperty Name="Domain" Relationship="Self.FK__BookDomai__Domai__1FCDBCEB" FromRole="BookDomain" ToRole="Domain" />
+  </EntityType>
+  <EntityType Name="Domain">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="BookDomain" Relationship="Self.FK__BookDomai__Domai__1FCDBCEB" FromRole="Domain" ToRole="BookDomain" />
+  </EntityType>
+  <EntityType Name="Publisher">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Info" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Book" Relationship="Self.FK__Book__PublisherI__182C9B23" FromRole="Publisher" ToRole="Book" />
+  </EntityType>
+  <Association Name="FK__BookAbone__Abone__239E4DCF">
+    <End Role="Abonent" Type="Self.Abonent" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BookAbonent" Type="Self.BookAbonent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Abonent">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BookAbonent">
+        <PropertyRef Name="AbonentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BookAutho__Autho__1BFD2C07">
+    <End Role="Author" Type="Self.Author" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BookAuthor" Type="Self.BookAuthor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Author">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BookAuthor">
+        <PropertyRef Name="AuthorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Book__PublisherI__182C9B23">
+    <End Role="Publisher" Type="Self.Publisher" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Book" Type="Self.Book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Publisher">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Book">
+        <PropertyRef Name="PublisherId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BookAbone__BookI__22AA2996">
+    <End Role="Book" Type="Self.Book" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BookAbonent" Type="Self.BookAbonent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Book">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BookAbonent">
+        <PropertyRef Name="BookId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BookAutho__BookI__1B0907CE">
+    <End Role="Book" Type="Self.Book" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BookAuthor" Type="Self.BookAuthor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Book">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BookAuthor">
+        <PropertyRef Name="BookId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BookDomai__BookI__1ED998B2">
+    <End Role="Book" Type="Self.Book" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BookDomain" Type="Self.BookDomain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Book">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BookDomain">
+        <PropertyRef Name="BookId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BookDomai__Domai__1FCDBCEB">
+    <End Role="Domain" Type="Self.Domain" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BookDomain" Type="Self.BookDomain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Domain">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BookDomain">
+        <PropertyRef Name="DomainId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LibraryRusTelekonEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Abonent" EntityType="Self.Abonent" />
+    <EntitySet Name="Author" EntityType="Self.Author" />
+    <EntitySet Name="Book" EntityType="Self.Book" />
+    <EntitySet Name="BookAbonent" EntityType="Self.BookAbonent" />
+    <EntitySet Name="BookAuthor" EntityType="Self.BookAuthor" />
+    <EntitySet Name="BookDomain" EntityType="Self.BookDomain" />
+    <EntitySet Name="Domain" EntityType="Self.Domain" />
+    <EntitySet Name="Publisher" EntityType="Self.Publisher" />
+    <AssociationSet Name="FK__BookAbone__Abone__239E4DCF" Association="Self.FK__BookAbone__Abone__239E4DCF">
+      <End Role="Abonent" EntitySet="Abonent" />
+      <End Role="BookAbonent" EntitySet="BookAbonent" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BookAutho__Autho__1BFD2C07" Association="Self.FK__BookAutho__Autho__1BFD2C07">
+      <End Role="Author" EntitySet="Author" />
+      <End Role="BookAuthor" EntitySet="BookAuthor" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Book__PublisherI__182C9B23" Association="Self.FK__Book__PublisherI__182C9B23">
+      <End Role="Publisher" EntitySet="Publisher" />
+      <End Role="Book" EntitySet="Book" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BookAbone__BookI__22AA2996" Association="Self.FK__BookAbone__BookI__22AA2996">
+      <End Role="Book" EntitySet="Book" />
+      <End Role="BookAbonent" EntitySet="BookAbonent" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BookAutho__BookI__1B0907CE" Association="Self.FK__BookAutho__BookI__1B0907CE">
+      <End Role="Book" EntitySet="Book" />
+      <End Role="BookAuthor" EntitySet="BookAuthor" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BookDomai__BookI__1ED998B2" Association="Self.FK__BookDomai__BookI__1ED998B2">
+      <End Role="Book" EntitySet="Book" />
+      <End Role="BookDomain" EntitySet="BookDomain" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BookDomai__Domai__1FCDBCEB" Association="Self.FK__BookDomai__Domai__1FCDBCEB">
+      <End Role="Domain" EntitySet="Domain" />
+      <End Role="BookDomain" EntitySet="BookDomain" />
+    </AssociationSet>
+    <FunctionImport Name="BookPopularityReport" ReturnType="Collection(LibraryRusTelekonModel.BookPopularityReport_Result)">
+      <Parameter Name="firstDate" Mode="In" Type="DateTime" />
+      <Parameter Name="lastDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="BookPopularityReport_Result">
+    <Property Type="Int32" Name="CountOfTaking" Nullable="true" />
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Annotation" Nullable="false" MaxLength="300" />
+    <Property Type="String" Name="Name1" Nullable="false" MaxLength="30" />
+    <Property Type="DateTime" Name="YearOfPublication" Nullable="false" />
+  </ComplexType>
+</Schema>

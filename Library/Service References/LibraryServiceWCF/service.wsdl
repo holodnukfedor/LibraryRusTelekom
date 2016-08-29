@@ -1,0 +1,576 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="LibraryService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/LibraryWCF.DTO" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/LibraryBLL.DTO" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/LibraryDAL.Model" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/LibraryDAL.Pagination" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/LibraryDAL.Sorting" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILibraryService_GetBookPopularityReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookPopularityReport" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetBookPopularityReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookPopularityReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetBooksList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBooksList" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetBooksList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBooksListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetBooksOfAbonent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBooksOfAbonent" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetBooksOfAbonent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBooksOfAbonentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_CreateBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBook" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_CreateBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_UpdateBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBook" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_UpdateBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_DeleteBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBook" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_DeleteBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GiveBookToAbonent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GiveBookToAbonent" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GiveBookToAbonent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GiveBookToAbonentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_ReturnBookFromAbonent_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnBookFromAbonent" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_ReturnBookFromAbonent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnBookFromAbonentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_AddAuthorToBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAuthorToBook" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_AddAuthorToBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAuthorToBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_RemoveAuthorFromBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAuthorFromBook" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_RemoveAuthorFromBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAuthorFromBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_AddDomainToBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDomainToBook" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_AddDomainToBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDomainToBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_RemoveDomainFromBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveDomainFromBook" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_RemoveDomainFromBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveDomainFromBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_ChangePublisher_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePublisher" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_ChangePublisher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePublisherResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetAbonentsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAbonentsList" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetAbonentsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAbonentsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_CreateAbonent_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAbonent" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_CreateAbonent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAbonentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_UpdateAbonent_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAbonent" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_UpdateAbonent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAbonentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_DeleteAbonent_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAbonent" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_DeleteAbonent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAbonentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetDomainsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDomainsList" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetDomainsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDomainsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_CreateDomain_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDomain" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_CreateDomain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_UpdateDomain_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDomain" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_UpdateDomain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_DeleteDomain_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDomain" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_DeleteDomain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetPublishersList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPublishersList" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetPublishersList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPublishersListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_CreatePublisher_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePublisher" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_CreatePublisher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePublisherResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_UpdatePublisher_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePublisher" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_UpdatePublisher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePublisherResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_DeletePublisher_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePublisher" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_DeletePublisher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePublisherResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetAuthorsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthorsList" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetAuthorsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthorsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_CreateAuthor_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAuthor" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_CreateAuthor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAuthorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_UpdateAuthor_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAuthor" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_UpdateAuthor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAuthorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_DeleteAuthor_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAuthor" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_DeleteAuthor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAuthorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ILibraryService">
+    <wsdl:operation name="GetBookPopularityReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetBookPopularityReport" message="tns:ILibraryService_GetBookPopularityReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetBookPopularityReportResponse" message="tns:ILibraryService_GetBookPopularityReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBooksList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetBooksList" message="tns:ILibraryService_GetBooksList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetBooksListResponse" message="tns:ILibraryService_GetBooksList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBooksOfAbonent">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetBooksOfAbonent" message="tns:ILibraryService_GetBooksOfAbonent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetBooksOfAbonentResponse" message="tns:ILibraryService_GetBooksOfAbonent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/CreateBook" message="tns:ILibraryService_CreateBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/CreateBookResponse" message="tns:ILibraryService_CreateBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/UpdateBook" message="tns:ILibraryService_UpdateBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/UpdateBookResponse" message="tns:ILibraryService_UpdateBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/DeleteBook" message="tns:ILibraryService_DeleteBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/DeleteBookResponse" message="tns:ILibraryService_DeleteBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GiveBookToAbonent">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GiveBookToAbonent" message="tns:ILibraryService_GiveBookToAbonent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GiveBookToAbonentResponse" message="tns:ILibraryService_GiveBookToAbonent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBookFromAbonent">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/ReturnBookFromAbonent" message="tns:ILibraryService_ReturnBookFromAbonent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/ReturnBookFromAbonentResponse" message="tns:ILibraryService_ReturnBookFromAbonent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAuthorToBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/AddAuthorToBook" message="tns:ILibraryService_AddAuthorToBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/AddAuthorToBookResponse" message="tns:ILibraryService_AddAuthorToBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAuthorFromBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/RemoveAuthorFromBook" message="tns:ILibraryService_RemoveAuthorFromBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/RemoveAuthorFromBookResponse" message="tns:ILibraryService_RemoveAuthorFromBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDomainToBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/AddDomainToBook" message="tns:ILibraryService_AddDomainToBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/AddDomainToBookResponse" message="tns:ILibraryService_AddDomainToBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDomainFromBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/RemoveDomainFromBook" message="tns:ILibraryService_RemoveDomainFromBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/RemoveDomainFromBookResponse" message="tns:ILibraryService_RemoveDomainFromBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePublisher">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/ChangePublisher" message="tns:ILibraryService_ChangePublisher_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/ChangePublisherResponse" message="tns:ILibraryService_ChangePublisher_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAbonentsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetAbonentsList" message="tns:ILibraryService_GetAbonentsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetAbonentsListResponse" message="tns:ILibraryService_GetAbonentsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAbonent">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/CreateAbonent" message="tns:ILibraryService_CreateAbonent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/CreateAbonentResponse" message="tns:ILibraryService_CreateAbonent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAbonent">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/UpdateAbonent" message="tns:ILibraryService_UpdateAbonent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/UpdateAbonentResponse" message="tns:ILibraryService_UpdateAbonent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAbonent">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/DeleteAbonent" message="tns:ILibraryService_DeleteAbonent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/DeleteAbonentResponse" message="tns:ILibraryService_DeleteAbonent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetDomainsList" message="tns:ILibraryService_GetDomainsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetDomainsListResponse" message="tns:ILibraryService_GetDomainsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDomain">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/CreateDomain" message="tns:ILibraryService_CreateDomain_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/CreateDomainResponse" message="tns:ILibraryService_CreateDomain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDomain">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/UpdateDomain" message="tns:ILibraryService_UpdateDomain_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/UpdateDomainResponse" message="tns:ILibraryService_UpdateDomain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDomain">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/DeleteDomain" message="tns:ILibraryService_DeleteDomain_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/DeleteDomainResponse" message="tns:ILibraryService_DeleteDomain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPublishersList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetPublishersList" message="tns:ILibraryService_GetPublishersList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetPublishersListResponse" message="tns:ILibraryService_GetPublishersList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePublisher">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/CreatePublisher" message="tns:ILibraryService_CreatePublisher_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/CreatePublisherResponse" message="tns:ILibraryService_CreatePublisher_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePublisher">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/UpdatePublisher" message="tns:ILibraryService_UpdatePublisher_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/UpdatePublisherResponse" message="tns:ILibraryService_UpdatePublisher_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePublisher">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/DeletePublisher" message="tns:ILibraryService_DeletePublisher_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/DeletePublisherResponse" message="tns:ILibraryService_DeletePublisher_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthorsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetAuthorsList" message="tns:ILibraryService_GetAuthorsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetAuthorsListResponse" message="tns:ILibraryService_GetAuthorsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAuthor">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/CreateAuthor" message="tns:ILibraryService_CreateAuthor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/CreateAuthorResponse" message="tns:ILibraryService_CreateAuthor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAuthor">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/UpdateAuthor" message="tns:ILibraryService_UpdateAuthor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/UpdateAuthorResponse" message="tns:ILibraryService_UpdateAuthor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAuthor">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/DeleteAuthor" message="tns:ILibraryService_DeleteAuthor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/DeleteAuthorResponse" message="tns:ILibraryService_DeleteAuthor_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ILibraryService" type="tns:ILibraryService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetBookPopularityReport">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/GetBookPopularityReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBooksList">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/GetBooksList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBooksOfAbonent">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/GetBooksOfAbonent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBook">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/CreateBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBook">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/UpdateBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBook">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/DeleteBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GiveBookToAbonent">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/GiveBookToAbonent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBookFromAbonent">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/ReturnBookFromAbonent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAuthorToBook">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/AddAuthorToBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAuthorFromBook">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/RemoveAuthorFromBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDomainToBook">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/AddDomainToBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDomainFromBook">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/RemoveDomainFromBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePublisher">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/ChangePublisher" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAbonentsList">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/GetAbonentsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAbonent">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/CreateAbonent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAbonent">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/UpdateAbonent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAbonent">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/DeleteAbonent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainsList">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/GetDomainsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDomain">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/CreateDomain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDomain">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/UpdateDomain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDomain">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/DeleteDomain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPublishersList">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/GetPublishersList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePublisher">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/CreatePublisher" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePublisher">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/UpdatePublisher" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePublisher">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/DeletePublisher" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthorsList">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/GetAuthorsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAuthor">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/CreateAuthor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAuthor">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/UpdateAuthor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAuthor">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/DeleteAuthor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LibraryService">
+    <wsdl:port name="BasicHttpBinding_ILibraryService" binding="tns:BasicHttpBinding_ILibraryService">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/LibraryWCF/Service1/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

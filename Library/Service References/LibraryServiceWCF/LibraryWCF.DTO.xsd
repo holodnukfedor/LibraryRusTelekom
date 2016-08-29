@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/LibraryWCF.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LibraryWCF.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/LibraryBLL.DTO" />
+  <xs:complexType name="ReportBookPopularityDto">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:HasErrorAndRowCountFieldAnswer">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/LibraryBLL.DTO" minOccurs="0" name="ReportBookPopularity" nillable="true" type="q1:ReportBookPopularity" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReportBookPopularityDto" nillable="true" type="tns:ReportBookPopularityDto" />
+  <xs:complexType name="HasErrorAndRowCountFieldAnswer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllRowsCount" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HasErrorAndRowCountFieldAnswer" nillable="true" type="tns:HasErrorAndRowCountFieldAnswer" />
+  <xs:complexType name="BookDTOList">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:HasErrorAndRowCountFieldAnswer">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/LibraryBLL.DTO" minOccurs="0" name="Books" nillable="true" type="q2:ArrayOfBookDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BookDTOList" nillable="true" type="tns:BookDTOList" />
+  <xs:complexType name="UserBookDtoList">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:HasErrorAndRowCountFieldAnswer">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/LibraryBLL.DTO" minOccurs="0" name="Books" nillable="true" type="q3:ArrayOfUserBookDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserBookDtoList" nillable="true" type="tns:UserBookDtoList" />
+  <xs:complexType name="AbonentDTOList">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:HasErrorAndRowCountFieldAnswer">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/LibraryBLL.DTO" minOccurs="0" name="Abonents" nillable="true" type="q4:ArrayOfAbonentDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AbonentDTOList" nillable="true" type="tns:AbonentDTOList" />
+  <xs:complexType name="DomainListDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:HasErrorAndRowCountFieldAnswer">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/LibraryBLL.DTO" minOccurs="0" name="Domains" nillable="true" type="q5:ArrayOfDomainDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainListDTO" nillable="true" type="tns:DomainListDTO" />
+  <xs:complexType name="PublisherDTOList">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:HasErrorAndRowCountFieldAnswer">
+        <xs:sequence>
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/LibraryBLL.DTO" minOccurs="0" name="Publishers" nillable="true" type="q6:ArrayOfPublisherDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PublisherDTOList" nillable="true" type="tns:PublisherDTOList" />
+  <xs:complexType name="AuthorDTOList">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:HasErrorAndRowCountFieldAnswer">
+        <xs:sequence>
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/LibraryBLL.DTO" minOccurs="0" name="Authors" nillable="true" type="q7:ArrayOfAuthorDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AuthorDTOList" nillable="true" type="tns:AuthorDTOList" />
+</xs:schema>

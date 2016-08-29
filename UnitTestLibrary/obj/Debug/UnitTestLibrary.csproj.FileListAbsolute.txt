@@ -1,0 +1,14 @@
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\UnitTestLibrary\bin\Debug\UnitTestLibrary.dll.config
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\UnitTestLibrary\bin\Debug\UnitTestLibrary.dll
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\UnitTestLibrary\bin\Debug\UnitTestLibrary.pdb
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\UnitTestLibrary\bin\Debug\EntityFramework.dll
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\UnitTestLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\UnitTestLibrary\bin\Debug\LibraryBLL.dll
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\UnitTestLibrary\bin\Debug\LibraryDAL.dll
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\UnitTestLibrary\bin\Debug\LibraryBLL.pdb
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\UnitTestLibrary\bin\Debug\LibraryDAL.pdb
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\UnitTestLibrary\bin\Debug\EntityFramework.xml
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\UnitTestLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\UnitTestLibrary\obj\Debug\UnitTestLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\UnitTestLibrary\obj\Debug\UnitTestLibrary.dll
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\UnitTestLibrary\obj\Debug\UnitTestLibrary.pdb

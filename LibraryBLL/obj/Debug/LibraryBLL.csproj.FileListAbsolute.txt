@@ -1,0 +1,12 @@
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryBLL\bin\Debug\LibraryBLL.dll.config
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryBLL\bin\Debug\LibraryBLL.dll
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryBLL\bin\Debug\LibraryBLL.pdb
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryBLL\bin\Debug\EntityFramework.dll
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryBLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryBLL\bin\Debug\LibraryDAL.dll
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryBLL\bin\Debug\LibraryDAL.pdb
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryBLL\bin\Debug\EntityFramework.xml
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryBLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryBLL\obj\Debug\LibraryBLL.csprojResolveAssemblyReference.cache
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryBLL\obj\Debug\LibraryBLL.dll
+C:\Users\Fedor\Documents\Visual Studio 2013\Projects\Library\LibraryBLL\obj\Debug\LibraryBLL.pdb
